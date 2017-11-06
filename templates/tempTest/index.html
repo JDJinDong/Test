@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {#展示属性#}
+    {{ temp.name }}<br>
+    {{ temp.age }}<br>
+    {{ temp.sex }}<br>
+
+    {#方法的展示#}
+    {{ temp.show }}
+    <hr>
+
+{#过滤器#}
+{% for item in contList %}
+{#    倒序：#}
+{#    {% for item in contList reversed %}#}
+{#    <li>{{ item }}</li>#}
+    <li>{{ item.upper }}</li><hr>
+    同上:<li>{{ item | upper }}</li><hr>
+    <li>{{ item | capfirst }}</li><br>
+
+{% endfor %}
+
+    <hr>
+    {% load percent %}
+    {{ now | percent }}<hr>
+
+    {#已有的过滤方法#}
+    {{ now | date:"Y-m-d:h:m:s "}}
+
+
+</body>
+</html>

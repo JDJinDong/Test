@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for item in cont %}
+       <li>元素{{ item }}</li><br>
+        {% comment %}循环计数次数,索引从0开始: <li{{ forloop.counter0 }}></li>{% endcomment %}
+        <li{{ forloop.counter }}></li>
+        {#倒着计数,从索引的最大位置开始#}
+        <li>{{ forloop.revcounter }}</li>
+        {# 判断是否是第一个计数的，返回的是布尔值：#}
+        <li>{{ forloop.first }}</li>
+    {% endfor %}
+</body>
+</html>
